@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", "管理员，欢迎你！");
         } else {
             session.setAttribute("user", "登录信息错误，请检查用户名或密码");
+            // TODO 添加5秒后返回登录页面的逻辑
         }
 
         // 将页面转发到欢迎页面
