@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 /**
  * Created by Administrator on 2018/10/26.
  */
-//@WebServlet(name = "LoginServlet", urlPatterns = "/login")
+//@WebServlet(name = "LoginServlet", urlPatterns = "/welcome")
 public class LoginServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 设置字符编码
