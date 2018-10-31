@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,5 +23,9 @@ public class Articles extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         out.write("Articles!!!");
+
+        // 转发
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/articles.jsp");
+        requestDispatcher.forward(request, response);
     }
 }
