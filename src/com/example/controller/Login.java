@@ -29,21 +29,17 @@ public class Login extends HttpServlet {
         if ("administrator".equals(username) && "123456".equals(password)) {
             // 登录成功，设置 session
             session.setAttribute("user", "管理员，欢迎你！");
-
             // 转发
-            // RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
-            // requestDispatcher.forward(request, response);
-
-            response.sendRedirect("/HelloServlet/articles");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
+            requestDispatcher.forward(request, response);
         } else {
-            doGet(request, response);
+            // 重定向
+            response.sendRedirect("/HelloServlet/articles.jsp");
         }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 转发
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
-        requestDispatcher.forward(request, response);
+
     }
 }
